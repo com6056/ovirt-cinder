@@ -1,4 +1,4 @@
-This guide was originally written for KGCOE at RIT (https://www.new.example.org/kgcoe/).
+This guide was originally written for KGCOE at RIT (https://www.rit.edu/kgcoe/).
 
 This guide assumes that you are using the backup script provided in LINK TO SETUP GUIDE
 Let's assume that the last available backup date was 20161012 and that you would like to restore from that backup.  
