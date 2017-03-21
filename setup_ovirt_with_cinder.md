@@ -153,7 +153,7 @@ kolla-ansible deploy
 If all went well, you should get something similar to the following as the final output:
 
 ```
-PLAY RECAP *********************************************************************
+PLAY RECAP **********************************************
 localhost                  : ok=141  changed=45   unreachable=0    failed=0
 ```
 
@@ -167,7 +167,7 @@ ENTER_POOL_NAME_HERE should be replaced with the pool you are using for oVirt/Ci
 ```
 
 Copy the key it outputs to /etc/ceph/ceph.client.cinder.keyring and /etc/kolla/cinder-volume/ceph.client.cinder.keyring on the system running Kolla.  
-***If the Ceph user you created for Cinder isn't "cinder", then change the name of that file accordingly. For example, if you named the user "rit-cinder", then both files should be named "ceph.client.rit-cinder.keyring".***
+**If the Ceph user you created for Cinder isn't "cinder", then change the name of that file accordingly. For example, if you named the user "rit-cinder", then both files should be named "ceph.client.rit-cinder.keyring".**
 
 Add the following line to the bottom of the "[DEFAULT]" section in /etc/kolla/cinder-volume/cinder.conf:
 
