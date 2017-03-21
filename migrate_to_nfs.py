@@ -15,10 +15,7 @@ import sys
 
 def connect(ovirt_api_url, ovirt_username, ovirt_password):
     VERSION = params.Version(major='4', minor='0')
-    URL = ovirt_api_url
-    USERNAME = ovirt_username
-    PASSWORD = ovirt_password
-    ovirt_api = API(url=URL, username=USERNAME, password=PASSWORD, insecure=True)
+    ovirt_api = API(url=ovirt_api_url, username=ovirt_username, password=ovirt_password, insecure=True)
 
     return ovirt_api
 

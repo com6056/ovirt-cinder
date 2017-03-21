@@ -19,10 +19,7 @@ import sys
 def connect(ovirt_api_url, ovirt_username, ovirt_password, cinder_username, cinder_password, cinder_project,
             cinder_auth_url, ceph_conf_file, ceph_client, ceph_pool):
     VERSION = params.Version(major='4', minor='0')
-    URL = ovirt_api_url
-    USERNAME = ovirt_username
-    PASSWORD = ovirt_password
-    ovirt_api = API(url=URL, username=USERNAME, password=PASSWORD, insecure=True)
+    ovirt_api = API(url=ovirt_api_url, username=ovirt_username, password=ovirt_password, insecure=True)
 
     cinder_api = client.Client(cinder_username, cinder_password, cinder_project, cinder_auth_url, service_type="volume")
 
