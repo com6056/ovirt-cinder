@@ -60,7 +60,7 @@ def migrate_disks(ovirt_api, cinder_api, ceph_api_ioctx, vms_to_migrate, old_sto
                         image_path = find_image(old_storage_id, disk, nfs_mount_dir)
                         if image_path:
                             if os.system("qemu-img convert -p -O raw {} rbd:{}/volume-{}:id={}:conf={}".format(
-                                              image_path, cinder_disk_id, ceph_pool, ceph_client, ceph_conf_file)) == 0:
+                                              image_path, ceph_pool, cinder_disk_id, ceph_client, ceph_conf_file)) == 0:
                                 new_disk = register_disk(vm, disk, ovirt_api, disk.name, new_storage_id)
                                 if new_disk:
                                     attach_detach_disk(vm, disk, new_disk)
@@ -90,7 +90,7 @@ def remove_snapshots(vm):
     if len(snapshots) > 1:
         removed_snaps = 0
         for snapshot in snapshots:
-            if snapshot.description != 'Active VM':
+            if snapshot.description != 'Active VM' and snapshot.description != 'Active VM snapshot':
                 print("[{}] Removing snapshot '{}'...".format(vm.name, snapshot.description))
                 snapshot.delete()
                 removed_snaps += 1
@@ -152,7 +152,7 @@ def register_disk(vm, disk, ovirt_api, old_disk_name, new_storage_id):
     elif len(unregistered_disks) > 1:
         for disk in unregistered_disks:
             if disk.name == old_disk_name:
-                new_disk = new_storage.disks.add(unregistered_disks[0], unregistered=True)
+                new_disk = new_storage.disks.add(disk, unregistered=True)
                 return new_disk
     return False
 

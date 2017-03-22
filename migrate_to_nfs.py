@@ -74,7 +74,7 @@ def remove_snapshots(vm):
     if len(snapshots) > 1:
         removed_snaps = 0
         for snapshot in snapshots:
-            if snapshot.description != 'Active VM':
+            if snapshot.description != 'Active VM' and snapshot.description != 'Active VM snapshot':
                 print("[{}] Removing snapshot '{}'...".format(vm.name, snapshot.description))
                 snapshot.delete()
                 removed_snaps += 1
