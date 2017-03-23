@@ -199,7 +199,6 @@ if __name__ == "__main__":
     new_storage_id = ''
     nfs_mount_dir = ''
     migrate_tag = 'Migrate_to_NFS'
-    cinder_volume_type = ''
     search_query = 'Storage.name= Status=down Tag={}'.format(migrate_tag)
 
     mail_from = ''
