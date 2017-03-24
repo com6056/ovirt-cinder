@@ -189,6 +189,7 @@ rbd_pool = rbd
 volume_backend_name = ceph
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
 rbd_secret_uuid = 060e9922-baa1-4631-98d1-81272736e938
+rbd_flatten_volume_from_snapshot = true
 
 #If there is a second backend
 [rbd-2]
@@ -199,6 +200,7 @@ rbd_pool = rbd-2
 volume_backend_name = ceph-2
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
 rbd_secret_uuid = 060e9922-baa1-4631-98d1-81272736e938
+rbd_flatten_volume_from_snapshot = true
 ```
 
 
